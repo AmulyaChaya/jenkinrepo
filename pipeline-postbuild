@@ -22,9 +22,9 @@ pipeline {
 	}	
 	stages {
 		stage('DEPLOY_TEST') {
-			/*when {
+			when {
 				environment name: 'DEPLOY_TO', value: 'test'
-			}*/
+			}
 			 environment {
 				VALUE = 'false' // overrides pipeline level NAME env variable
 				//BUILD_NUMBER = "2" // overrides the default BUILD_NUMBER
