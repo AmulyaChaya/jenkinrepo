@@ -13,12 +13,12 @@ pipeline {
 					sh 'sleep 5'
 					sh 'exit 1'
 				}
-				if(stageResult.find{ it.key == "{STAGE1}" }?.value == "FAILURE") {
+				/*if(stageResult.find{ it.key == "{STAGE1}" }?.value == "FAILURE") {
        					 // do something special if we're unstable
 					 script{ 
 						VALUE="false"
 					}
-    				}
+    				}*/
 			}	
 		}
 		
