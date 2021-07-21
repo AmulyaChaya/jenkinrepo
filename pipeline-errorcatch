@@ -8,7 +8,7 @@ pipeline {
 					sh 'VALUE="false"'
 					echo "STAGE 1 IS RUNNING ......."
 					sh 'sleep 5'
-					sh 'exit 1'
+					//sh 'exit 1'
 				}	
 			}	
 		}
