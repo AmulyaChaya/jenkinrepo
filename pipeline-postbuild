@@ -1,3 +1,5 @@
+def BOOL_VALUE = 'True'
+
 pipeline {
 	agent any
 
@@ -18,18 +20,15 @@ pipeline {
 	environment {
 		//DEPLOY_TO = "${TARGET_ENV}"
 		 DEPLOY_TO = "${Test}"
-		 VALUE = "${Success}"
-	}	
+	}
+	BOOL_VALUE = "${Success}"
 	stages {
 		stage('DEPLOY_TEST') {
-			when {
+			/*when {
 				environment name: 'DEPLOY_TO', value: 'test'
-			}
-			 environment {
-				VALUE = 'false' // overrides pipeline level NAME env variable
-				//BUILD_NUMBER = "2" // overrides the default BUILD_NUMBER
-            		}
+			}*/
 			steps {
+				BOOL_VALUE = "false"
 				echo "DEPLOY TO TEST ENVIRONMENT ......."
 				sh 'sleep 5'
 				//sh 'exit 1'
@@ -38,7 +37,10 @@ pipeline {
 		stage('DEPLOY_PROD') {
 			/*when {
 				environment name: 'VALUE', value: 'false'
-			}*/	
+			}*/
+			when {
+       				 expression { BOOL_VALUE != 'true' }
+     			 }
 			steps {
 				echo "value: $VALUE"
 				echo "hi"
