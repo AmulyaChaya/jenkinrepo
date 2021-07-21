@@ -10,7 +10,7 @@ pipeline {
 		choice(name: 'TARGET_ENV', choices: ['test', 'prod'], description: 'Target environment to deploy')
 	}*/	
 	
-	parametrs {
+	parameters {
 		//properties([parameters([booleanParam(defaultValue: true, description: 'Run only when build is success', name: 'Success')])])
 		booleanParam(name: 'Success',defaultValue: true,description: 'Run only when build is success')
 	}
