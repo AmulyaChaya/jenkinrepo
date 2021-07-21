@@ -42,7 +42,6 @@ pipeline {
        				 expression { BOOL_VALUE != 'true' }
      			 }
 			steps {
-				echo "value: $VALUE"
 				echo "hi"
 				echo "DEPLOY TO PRODUCTION ......."
 				sh 'sleep 5'
