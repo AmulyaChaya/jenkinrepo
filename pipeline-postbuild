@@ -36,11 +36,11 @@ pipeline {
 			}		
 		}
 		stage('DEPLOY_PROD') {
-			echo "value: $VALUE"
 			when {
 				environment name: 'VALUE', value: 'false'
 			}	
 			steps {
+				echo "value: $VALUE"
 				echo "hi"
 				echo "DEPLOY TO PRODUCTION ......."
 				sh 'sleep 5'
