@@ -14,7 +14,7 @@ pipeline {
 		stage('TEST') {
 			parallel { 
 				stage('TEST1') {
-					agent { label 'docker-agent' }
+					agent any
 					steps {
 						sh 'sleep 5'	
 						echo "TESTING PHASE1"
