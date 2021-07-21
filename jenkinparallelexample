@@ -12,6 +12,7 @@ pipeline {
 		}
 		
 		stage('TEST') {
+			agent any
 			parallel { 
 				stage('TEST1') {
 					agent any
@@ -49,6 +50,7 @@ pipeline {
 		}
 		
 		stage('DEPLOY') {
+			agent {label 'master'}
 			steps {
 				sh '''
 					pwd
