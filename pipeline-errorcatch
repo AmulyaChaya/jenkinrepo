@@ -6,6 +6,7 @@ pipeline {
 			steps {
 				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 					sh 'VALUE="false"'
+					echo "Var:$VALUE"
 					echo "STAGE 1 IS RUNNING ......."
 					sh 'sleep 5'
 					//sh 'exit 1'
