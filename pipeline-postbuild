@@ -36,9 +36,9 @@ pipeline {
 			}		
 		}
 		stage('DEPLOY_PROD') {
-			when {
+			/*when {
 				environment name: 'VALUE', value: 'false'
-			}	
+			}*/	
 			steps {
 				echo "value: $VALUE"
 				echo "hi"
