@@ -5,7 +5,7 @@ pipeline {
 		stage('STAGE1') {
 			steps {
 				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-					scipts { 
+					scipt{ 
 						VALUE="false"
 					}
 					echo "Var:$VALUE"
