@@ -6,11 +6,12 @@ pipeline {
 		string(name: 'Test', defaultValue: 'test')
 	}
 	/*parameters {
-	//properties([parameters([choice(choices: ['Test', 'Prod', 'Dev'], name: 'Build')])])
+	        //properties([parameters([choice(choices: ['Test', 'Prod', 'Dev'], name: 'Build')])])
 		choice(name: 'TARGET_ENV', choices: ['test', 'prod'], description: 'Target environment to deploy')
 	}*/	
 	environment {
-		DEPLOY_TO = "${TARGET_ENV}"
+		//DEPLOY_TO = "${TARGET_ENV}"
+		 DEPLOY_TO = "${Test}"
 	}	
 	stages {
 		stage('DEPLOY_TEST') {
