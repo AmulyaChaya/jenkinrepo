@@ -1,9 +1,12 @@
 pipeline {
 	agent any
 	
-	properties([parameters([string(defaultValue: 'test', name: 'Test')])])
+	//properties([parameters([string(defaultValue: 'test', name: 'Test')])])
+	parameters {
+		string(name: 'Test', defaultValue: 'test')
+	}
 	/*parameters {
-	
+	//properties([parameters([choice(choices: ['Test', 'Prod', 'Dev'], name: 'Build')])])
 		choice(name: 'TARGET_ENV', choices: ['test', 'prod'], description: 'Target environment to deploy')
 	}*/	
 	environment {
