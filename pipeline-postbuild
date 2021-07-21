@@ -24,11 +24,14 @@ pipeline {
 		stage('DEPLOY_TEST') {
 			/*when {
 				environment name: 'DEPLOY_TO', value: 'test'
-			}*/	
+			}*/
+			 environment {
+				VALUE = "false" // overrides pipeline level NAME env variable
+				//BUILD_NUMBER = "2" // overrides the default BUILD_NUMBER
+            		}
 			steps {
 				echo "DEPLOY TO TEST ENVIRONMENT ......."
 				sh 'sleep 5'
-				VALUE = "false"
 				sh 'exit 1'
 			}		
 		}
