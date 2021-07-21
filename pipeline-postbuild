@@ -28,7 +28,7 @@ pipeline {
 				environment name: 'DEPLOY_TO', value: 'test'
 			}*/
 			steps {
-				BOOL_VALUE = "false"
+				sh 'BOOL_VALUE = "false"'
 				echo "DEPLOY TO TEST ENVIRONMENT ......."
 				sh 'sleep 5'
 				//sh 'exit 1'
