@@ -6,13 +6,19 @@ pipeline {
 			steps {
 				catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
 					script{ 
-						VALUE="false"
+						VALUE="true"
 					}
 					echo "Var:$VALUE"
 					echo "STAGE 1 IS RUNNING ......."
 					sh 'sleep 5'
-					//sh 'exit 1'
-				}	
+					sh 'exit 1'
+				}
+				if(currentStage.getCurrentResult() == "FAILURE") {
+       					 // do something special if we're unstable
+					 script{ 
+						VALUE="false"
+					}
+    				}
 			}	
 		}
 		
