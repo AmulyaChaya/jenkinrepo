@@ -26,7 +26,7 @@ pipeline {
 				environment name: 'DEPLOY_TO', value: 'test'
 			}*/
 			 environment {
-				VALUE = "false" // overrides pipeline level NAME env variable
+				VALUE = 'false' // overrides pipeline level NAME env variable
 				//BUILD_NUMBER = "2" // overrides the default BUILD_NUMBER
             		}
 			steps {
@@ -36,6 +36,7 @@ pipeline {
 			}		
 		}
 		stage('DEPLOY_PROD') {
+			echo "value: $VALUE"
 			when {
 				environment name: 'VALUE', value: 'false'
 			}	
