@@ -12,7 +12,6 @@ pipeline {
 		}
 		
 		stage('TEST') {
-			agent any
 			parallel { 
 				stage('TEST1') {
 					agent any
@@ -23,7 +22,7 @@ pipeline {
 					
 				}
 				stage('TEST2') {
-					agent { label 'agent1' }
+					agent { label 'target1' }
 					steps {
 						sh 'sleep 5'	
 						echo "TESTING PHASE2"
@@ -39,6 +38,7 @@ pipeline {
 					
 				}
 				stage('TEST4') {
+					agent any
 					steps {
 						sh 'sleep 5'
 						echo "TESTING PHASE4"
