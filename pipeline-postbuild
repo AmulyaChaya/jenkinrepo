@@ -21,7 +21,7 @@ pipeline {
 		//DEPLOY_TO = "${TARGET_ENV}"
 		 DEPLOY_TO = "${Test}"
 	}
-	sh 'BOOL_VALUE = "${Success}"'
+	//sh 'BOOL_VALUE = "${Success}"'
 	stages {
 		stage('DEPLOY_TEST') {
 			/*when {
