@@ -15,7 +15,7 @@ pipeline {
 		
 		stage('STAGE2') {
 			when {
-				expression {$VALUE == 'true'}
+				expression {VALUE == 'true'}
 			}
 			steps {
 				echo "STAGE 2 IS RUNNING ......."
